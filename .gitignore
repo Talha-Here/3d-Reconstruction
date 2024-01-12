@@ -1,4 +1,7 @@
-/Frames
+.vscode
+DownSampledVideo_Frames
+IMU-Position-Tracking\__pycache__
+venv
+2d_scale_estimation.py
+merged.ply
 Sample Point Cloud.ply
-test.ipynb
-
