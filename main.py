@@ -1,5 +1,8 @@
 import cv2,os
 
+#chair 811, 29.603341985723556
+#room with chairs 1445, 29.602837137732294
+
 video_path = './Dataset/video.mp4'
 output_path = 'downsampled_video.mp4'
 output_folder = 'DownSampledVideo_Frames'
@@ -22,9 +25,9 @@ while True:
     if not ret:
         break
 
-    if frame_number % downsampling_factor == 0:
-        output_filename = f'{output_folder}/frame_{frame_number:04d}.png'
-        cv2.imwrite(output_filename, frame)           
+    # if frame_number % downsampling_factor == 0:
+    #     output_filename = f'{output_folder}/frame_{frame_number:04d}.png'
+    #     cv2.imwrite(output_filename, frame)           
     frame_number += 1
-
+print(frame_number)
 cap.release()

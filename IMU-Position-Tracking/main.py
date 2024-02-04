@@ -330,17 +330,17 @@ def receive_data(mode='tcp'):
 
 
 def plot_trajectory():
-    tracker = IMUTracker(sampling=100)
+    tracker = IMUTracker(sampling=29.603341985723556)
     data = receive_data('file')    # toggle data source between 'tcp' and 'file' here
 
     print('initializing...')
-    init_list = tracker.initialize(data[5:30])
+    init_list = tracker.initialize(data[5:30])  #data[5:30]
 
     print('--------')
     print('processing...')
     
     # EKF step
-    a_nav, orix, oriy, oriz = tracker.attitudeTrack(data[30:], init_list)
+    a_nav, orix, oriy, oriz = tracker.attitudeTrack(data[30:], init_list)   #data[30:]
 
     # Acceleration correction step
     a_nav_filtered = tracker.removeAccErr(a_nav, filter=False)
@@ -354,16 +354,16 @@ def plot_trajectory():
     p = tracker.positionTrack(a_nav_filtered, v)
     plot3D([[p, 'position']])
     print(p)
+    print(len(p))
     
     # make 3D animation
-    xl = np.min(p[:, 0]) - 0.05
-    xh = np.max(p[:, 0]) + 0.05
-    yl = np.min(p[:, 1]) - 0.05
-    yh = np.max(p[:, 1]) + 0.05
-    zl = np.min(p[:, 2]) - 0.05
-    zh = np.max(p[:, 2]) + 0.05
-    plot3DAnimated(p, lim=[[xl, xh], [yl, yh], [zl, zh]], label='position', interval=5)
-
+    # xl = np.min(p[:, 0]) - 0.05
+    # xh = np.max(p[:, 0]) + 0.05
+    # yl = np.min(p[:, 1]) - 0.05
+    # yh = np.max(p[:, 1]) + 0.05
+    # zl = np.min(p[:, 2]) - 0.05
+    # zh = np.max(p[:, 2]) + 0.05
+    # plot3DAnimated(p, lim=[[xl, xh], [yl, yh], [zl, zh]], label='position', interval=5)
 
 if __name__ == '__main__':
     plot_trajectory()

@@ -29,14 +29,14 @@ def resampling(data,output):
     })
 
     # Save or further analyze the downsampled data
-    downsampled_df.to_csv(output, index=False)
+    downsampled_df.to_csv(output, index=False,header=False)
 
 if __name__ == "__main__":
     accel_data = pd.read_csv('./Dataset/accel_data.csv',header=None)
     resampling(accel_data,"./Dataset/resampled_accel_data.csv")
 
     gyro_data = pd.read_csv('./Dataset/gyro_data.csv',header=None)
-    resampling(accel_data,"./Dataset/resampled_gyro_data.csv")
+    resampling(gyro_data,"./Dataset/resampled_gyro_data.csv")
 
     mag_data = pd.read_csv('./Dataset/mag_data.csv',header=None)
-    resampling(accel_data,"./Dataset/resampled_mag_data.csv")
+    resampling(mag_data,"./Dataset/resampled_mag_data.csv")
