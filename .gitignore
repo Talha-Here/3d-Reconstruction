@@ -1,8 +1,6 @@
 .vscode
 DownSampledVideo_Frames
-IMU-Position-Tracking/__pycache__
+IMU_Position_Tracking/__pycache__
 venv
 2d_scale_estimation.py
-merged.ply
-Sample Point Cloud.ply
-IMU-Position-Tracking\__pycache__
+test.ipynb

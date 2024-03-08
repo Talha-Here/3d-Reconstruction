@@ -16,13 +16,10 @@ def extract_features(folder_path):
     frame_paths = sorted([os.path.join(folder_path, frame) for frame in os.listdir(folder_path) if frame.endswith('.png') and int(frame.split('_')[1].split('.')[0]) % 2 == 0])
 
     for frame_path in frame_paths:
-        # Read the frame
         frame = cv2.imread(frame_path, cv2.IMREAD_GRAYSCALE)
 
-        # Find keypoints and descriptors
         keypoints, descriptors = orb.detectAndCompute(frame, None)
 
-        # Store keypoints and descriptors
         keypoints_list.append(keypoints)
         descriptors_list.append(descriptors)
 
@@ -36,8 +33,7 @@ bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
 for i in range(len(descriptors_list) - 1):
     # Match descriptors
     matches = bf.match(descriptors_list[i], descriptors_list[i + 1])
-
-    # Sort them in ascending order of distance
+    
     matches = sorted(matches, key=lambda x: x.distance)
 
     # Draw matches
