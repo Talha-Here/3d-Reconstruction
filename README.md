@@ -22,6 +22,9 @@ This project aims to synchronize video recording with Inertial Measurement Unit 
 2. **Upload**: Upload the recorded video with IMU data to the project website.
 3. **Backend Processing**: Backend processing will take some time to process your data and then provide you with a visualization of your 3d model.
 
+## Notice
+This project is under active development, and we are constantly adding new features, improvements, and bug fixes. We encourage you to check back regularly for the latest updates and improvements. If you have any suggestions or feedback, feel free to open an issue or submit a pull request.
+
 ## Contributors
 - [Ahmad Baseer](https://github.com/Ahmad-Baseer)
 - [Talha Hussain Khan](https://github.com/Talha-Here)
