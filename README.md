@@ -34,7 +34,7 @@ This project is under active development, and we are constantly adding new featu
 ## Contributors
 - [Ahmad Baseer](https://github.com/Ahmad-Baseer)
 - [Talha Hussain Khan](https://github.com/Talha-Here)
-- [Arbaz Moin]()
+- [Arbaz Moin](https://github.com/ArBaZM3)
 - [Areesha Fateh]()
 
 ---
